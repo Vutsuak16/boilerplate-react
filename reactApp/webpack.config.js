@@ -3,8 +3,8 @@ var config = {
    entry: './main.js',
 	
    output: {
-      path: path.resolve(__dirname, 'dist'),
-      filename: 'index.js',
+      //path: path.resolve(__dirname, 'dist'),
+      filename: 'main.js',
    },
 	
    devServer: {
@@ -22,7 +22,11 @@ var config = {
             query: {
                presets: ['es2015', 'react']
             }
-         }
+         },
+         {
+	        test: /\.css/,
+	        loaders: ['style-loader', 'css-loader'],
+      	  }
       ]
    }
 }
